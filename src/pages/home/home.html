@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar >
+    <ion-title>
+      Fertilizer Calculator
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="options"></ion-icon>
+    </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding text-center>
+  <h3>Welcome to I-CHiVES Project</h3><h3>Fertilizer Calculator</h3>
+  <p>
+    This is an app for calculating precentage of fertilizer combinations that can satisfy recommended <b>Nitrogen</b>, <b>Phosphorus</b>, and <b>Potssium</b> from results of soil test. This application has its <i>own database of Fertilizers</i> which is used in calculations.</p>
+
+    <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+            <img src="./assets/imgs/XU_logo_type_ver_2.png" alt="xu" height="90%" width="80%"/>
+        </ion-col>
+        <ion-col>
+            <img src="./assets/imgs/aggies.png" alt="aggies" height="90%" width="80%"/>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+            <img src="./assets/imgs/ched.png" alt="ched" height="90%" width="80%"/>
+        </ion-col>
+        <ion-col>
+            <img src="./assets/imgs/lgu_talakag.png" alt="lgu" height="90%" width="80%"/>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    </div>
+  <button ion-button color="secondary" outline round (click)="pushSecond()">START</button>
+  <br>
+</ion-content>

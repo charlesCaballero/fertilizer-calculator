@@ -1,0 +1,44 @@
+
+<!--
+  Generated template for the ModalresultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar >
+  	
+    <ion-title>Results</ion-title>
+    <ion-buttons end>
+    	<button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+	
+	<ion-list>
+	    	<ion-item nopadding *ngFor="let data of datas; let i=index">
+	    		<br>
+	    		<h2>Option {{i+1}}</h2>
+		        <p *ngIf='data.nitrC!=0 || data.nameN!=null'>
+		          <b>{{data.nitrC}} kgs/{{(data.nitrC/50).toFixed(1)}} bag(s)</b> of {{data.nameN}}
+		        </p>
+		          <!-- <br> -->
+		        <p *ngIf='data.phosC!=0 || data.nameP!=null'>
+		          <b>{{data.phosC}} kgs/{{(data.phosC/50).toFixed(1)}} bag(s)</b> of {{data.nameP}}
+		        </p>
+		          <!-- <br> -->
+		        <p *ngIf='data.potasC!=0 || data.nameK!=null'>
+		          <b>{{data.potasC}} kgs/{{(data.potasC/50).toFixed(1)}} bag(s)</b> of {{data.nameK}}
+		        </p>
+		        <br>
+		        <h5 text-right>
+		          <b>Total Price: Php {{data.price}}</b>
+		        </h5>
+		    </ion-item>
+	</ion-list>
+</ion-content>
