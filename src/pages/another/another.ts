@@ -59,6 +59,12 @@ export class AnotherPage {
         value: 'Potatoes'
     });
 
+    alert.addInput({
+        type: 'checkbox',
+        label: 'Cauliflower',
+        value: 'Cauliflower'
+    });
+
     alert.addButton('Cancel');
     alert.addButton({
       text: 'Okay',

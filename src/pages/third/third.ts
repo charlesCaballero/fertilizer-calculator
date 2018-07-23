@@ -224,34 +224,34 @@ testA(x,y,z){
 
       for(var i=0; i<res.rows.length; i++) {
             if (x<=y) {
-          console.log('P < K');
+              console.log('P < K');
               this.pKilo=parseFloat((x/(res.rows.item(i).phos/100)).toFixed(1));
               y= (y-(res.rows.item(i).potas*this.pKilo/100)).toFixed(1);
               console.log("this.pKilo: "+this.pKilo);
               this.CalculatedferP[z] = this.pKilo;
-            this.name_P[z]=res.rows.item(i).fname;
-            this.price+=parseFloat(res.rows.item(i).price);
-          console.log("this.CalculatedferP ["+z+"]["+i+"]: "+this.CalculatedferP);
-          if(y<=0){
-                this.CalculatedferK[z] = 0;
-                this.displayRes(z);
-          }
-          else{this.calPotas(y,z);}
+              this.name_P[z]=res.rows.item(i).fname;
+              this.price+=parseFloat(res.rows.item(i).price);
+              console.log("this.CalculatedferP ["+z+"]["+i+"]: "+this.CalculatedferP);
+              if(y<=0){
+                    this.CalculatedferK[z] = 0;
+                    this.displayRes(z);
+              }
+              else{this.calPotas(y,z);}
 
             }else{
-          console.log('K < P');
+              console.log('K < P');
               this.kKilo=parseFloat((y/(res.rows.item(i).potas/100)).toFixed(1));
               x= (x-(res.rows.item(i).phos*this.kKilo/100)).toFixed(1);
               console.log("this.kKilo: "+this.kKilo);
               this.CalculatedferK[z] = this.kKilo;
-            this.name_K[z]=res.rows.item(i).fname;
-            this.price+=parseFloat(res.rows.item(i).price);
-            console.log("this.CalculatedferK ["+z+"]["+i+"]: "+this.CalculatedferK);
-            if(x<=0){
-                this.CalculatedferP[z] = 0;
-                this.displayRes(z);
-          }
-          else{this.calPhos(x,z);}
+              this.name_K[z]=res.rows.item(i).fname;
+              this.price+=parseFloat(res.rows.item(i).price);
+              console.log("this.CalculatedferK ["+z+"]["+i+"]: "+this.CalculatedferK);
+              if(x<=0){
+                  this.CalculatedferP[z] = 0;
+                  this.displayRes(z);
+              }
+              else{this.calPhos(x,z);}
 
             }
 
@@ -295,15 +295,15 @@ testB(x,y,z){
             }else{
           console.log('K < N');
               this.kKilo=parseFloat((y/(res.rows.item(i).potas/100)).toFixed(1));
-              x= (x-(res.rows.item(i).phos*this.kKilo/100)).toFixed(1);
+              x= (x-(res.rows.item(i).nitr*this.kKilo/100)).toFixed(1);
               this.CalculatedferK[z] = this.kKilo;
-            this.name_K[z]=res.rows.item(i).fname;
+              this.name_K[z]=res.rows.item(i).fname;
             // console.log("this.CalculatedferK ["+z+"]["+i+"]: "+this.CalculatedferK);
-            if(x<=0){
-                this.CalculatedferN[z] = 0;
-                this.displayRes(z);
-          }
-          else{this.calNitr(x,z);}
+              if(x<=0){
+                    this.CalculatedferN[z] = 0;
+                    this.displayRes(z);
+              }
+              else{this.calNitr(x,z);}
 
             }
 
@@ -328,34 +328,34 @@ testC(x,y,z){
       }
 
       for(var i=0; i<res.rows.length; i++) {
-            if (x<=y) {
-          // console.log('P < N');
-              this.pKilo=parseFloat((x/(res.rows.item(i).phos/100)).toFixed(1));
-              y= (y-(res.rows.item(i).potas*this.pKilo/100)).toFixed(1);
+            if (x>=y) {
+          // console.log('N > P');
+              this.pKilo=parseFloat((y/(res.rows.item(i).phos/100)).toFixed(1));
+              x= (x-(res.rows.item(i).nitr*this.pKilo/100)).toFixed(1);
               this.CalculatedferP[z] = this.pKilo;
-            this.name_P[z]=res.rows.item(i).fname;
-            this.price+=parseFloat(res.rows.item(i).price);
-            // console.log("this.CalculatedferP ["+z+"]["+i+"]: "+this.Calculatedferthis.Phos);
-          if(y<=0){
-                this.CalculatedferN[z] = 0;
-                this.displayRes(z);
-          }
-          else{this.calNitr(y,z);}
+              this.name_P[z]=res.rows.item(i).fname;
+              this.price+=parseFloat(res.rows.item(i).price);
+              // console.log("this.CalculatedferP ["+z+"]["+i+"]: "+this.Calculatedferthis.Phos);
+              if(x<=0){
+                    this.CalculatedferN[z] = 0;
+                    this.displayRes(z);
+              }
+              else{this.calNitr(x,z);}
 
 
             }else{
           // console.log('N < P');
-              this.nKilo=parseFloat((y/(res.rows.item(i).nitr/100)).toFixed(1));
-              x= (x-(res.rows.item(i).phos*this.nKilo/100)).toFixed(1);
+              this.nKilo=parseFloat((x/(res.rows.item(i).nitr/100)).toFixed(1));
+              y= (y-(res.rows.item(i).phos*this.nKilo/100)).toFixed(1);
               this.CalculatedferN[z] = this.nKilo;
-            this.name_N[z]=res.rows.item(i).fname;
-            this.price+=parseFloat(res.rows.item(i).price);
-            // console.log("this.CalculatedferN ["+z+"]["+i+"]: "+this.CalculatedferN);
-          if(x<=0){
-                this.CalculatedferP[z] = 0;
-                this.displayRes(z);
-          }
-          else{this.calPhos(x,z);}
+              this.name_N[z]=res.rows.item(i).fname;
+              this.price+=parseFloat(res.rows.item(i).price);
+              // console.log("this.CalculatedferN ["+z+"]["+i+"]: "+this.CalculatedferN);
+              if(y<=0){
+                    this.CalculatedferP[z] = 0;
+                    this.displayRes(z);
+              }
+              else{this.calPhos(y,z);}
 
 
             }
